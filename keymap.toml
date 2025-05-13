@@ -1,0 +1,9 @@
+[[manager.prepend_keymap]]
+on   = "!"
+run  = 'shell "pwsh.exe" --block'
+desc = "Open PowerShell here"
+
+[[manager.prepend_keymap]]
+on   = "2"
+run  = "plugin smart-switch 1"
+desc = "Switch or create tab 2"
