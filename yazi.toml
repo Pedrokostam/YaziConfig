@@ -1,3 +1,51 @@
-# yazi.toml
 [manager]
 show_hidden = true
+ratio = [2, 4, 5]
+show_symlink = true
+title_format = "{cwd}"
+linemode = "combo"
+
+[preview]
+tab_size = 2
+image_filter = "triangle"
+image_delay = 0
+max_width = 1300
+max_height = 1300
+image_quality = 75
+warp  = 'no'
+
+[opener]
+npp = [
+	{ run ='"C:\Program Files\Notepad++\notepad++.exe" %@', orphan = true, for = 'windows', desc = "Notepad++"}
+]
+micro = [
+	{ run = '"micro" %@', block = true, for = 'windows', desc = 'Micro'}
+]
+
+7zip = [
+	{ run = "7zFM.exe %@", orphan = true, for = 'windows', desc = 'Open in 7zip'}
+]
+[open]
+prepend_rules = [
+	{ mime = 'text/*', use = ["micro","npp"]},
+	{ mime = '*.ini', use = ["micro","npp"]},
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "7zip", "extract", "reveal" ] },
+	{ name = "*.{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,ms-cab*,cab*}", use = [ "7zip", "extract", "reveal" ] },
+]
+
+[plugin]
+prepend_previewers= [
+	{ name = "*.ini", run='preview'},
+	{ mime = "*.{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,ms-cab*,cab*}", run = "archive"},
+	{ mime = "{audio,video,image}/*", run = "mediainfo"},
+    { mime = "application/subrip", run = "mediainfo" },
+	{ name = "*.md", run = "mdcat"},
+	
+]
+prepend_preloaders = [  
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+]
+append_previewers = [
+{ name = "*.bin", run = "hexyl" },
+]

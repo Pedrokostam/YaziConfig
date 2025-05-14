@@ -1,15 +1,19 @@
-Status:children_add(function(self)
-	local h = self._current.hovered
-		if h and h.link_to then
-				return " -> " .. tostring(h.link_to)
-					else
-							return ""
-								end
-								end, 3300, Status.LEFT)
+require("git"):setup()
+require("full-border"):setup()
 
-Header:children_add(function()
-	if ya.target_family() ~= "unix" then
-			return ""
-				end
-					return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
-					end, 500, Header.LEFT)
+function Linemode:combo()
+	local time = math.floor(self._file.cha.mtime or 0)
+	if time == 0 then
+		time = ""
+	-- If file date is today
+	elseif os.date("%Y%m%d", time) == os.date("%Y%m%d") then
+		-- display just the hour
+		time = os.date("           %H:%M", time)
+	else
+		-- display just the year
+		time = os.date("%Y-%m-%d %H:%M", time)
+	end
+
+	local size = self._file:size()
+	return string.format("%s  %s", size and ya.readable_size(size) or "", time)
+end

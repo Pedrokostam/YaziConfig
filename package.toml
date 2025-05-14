@@ -1,12 +1,39 @@
-[plugin]
-deps = []
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "55bf699"
+hash = "6882ed11f8efed32c9de32c9d9222b57"
 
-[[flavor.deps]]
-use = "dangooddd/kanagawa"
-rev = "31167ed"
-hash = "7a1de9de34cdecfdf41405cbc485b34"
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "55bf699"
+hash = "394cc54375e5638237043d23ad34d478"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "9629b1e"
+hash = "3612d4dd15967e7dac388bf0250b9bc6"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "55bf699"
+hash = "2d909dbf6a4b108021f9afdced2cde98"
+
+[[plugin.deps]]
+use = "Reledia/hexyl"
+rev = "016a09b"
+hash = "57c25c6a44801a08fda2d4b12d855f53"
+
+[[plugin.deps]]
+use = "GrzegorzKozub/mdcat"
+rev = "7b7380a"
+hash = "d009f1ad1ae46e22474f3842c3f1fcd0"
 
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-dark"
 rev = "3e8cfba"
 hash = "aaf483c62652dc2b58af643095c84011"
+
+[[flavor.deps]]
+use = "gosxrgxx/flexoki-light"
+rev = "9d53f85"
+hash = "f9d7ea246575f8fe7232680a9b799166"
