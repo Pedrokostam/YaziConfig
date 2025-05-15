@@ -17,3 +17,10 @@ function Linemode:combo()
 	local size = self._file:size()
 	return string.format("%s  %s", size and ya.readable_size(size) or "", time)
 end
+
+Header:children_add(function()
+	if ya.target_family() ~= "unix" then
+		return ""
+	end
+	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
+end, 500, Header.LEFT)
