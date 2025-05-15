@@ -28,7 +28,7 @@ micro = [
 [open]
 prepend_rules = [
 	{ mime = 'text/*', use = ["micro","npp"]},
-	{ mime = '*.ini', use = ["micro","npp"]},
+	{ name = '*.{ini,lua}', use = ["micro","npp"]},
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "7zip", "extract", "reveal" ] },
 	{ name = "*.{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,ms-cab*,cab*}", use = [ "7zip", "extract", "reveal" ] },
 ]
@@ -48,4 +48,9 @@ prepend_preloaders = [
 ]
 append_previewers = [
 { name = "*.bin", run = "hexyl" },
+]
+
+prepend_fetchers=[
+	{ id = "git", name = "*", run = "git" },
+	{ id = "git", name = "*/", run = "git" },
 ]

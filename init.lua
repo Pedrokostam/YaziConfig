@@ -24,3 +24,7 @@ Header:children_add(function()
 	end
 	return ui.Span(ya.user_name() .. "@" .. ya.host_name() .. ":"):fg("blue")
 end, 500, Header.LEFT)
+
+th.git = th.git or {}
+th.git.modified = ui.Style():fg("blue")
+th.git.deleted = ui.Style():fg("red"):bold()
