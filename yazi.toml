@@ -1,3 +1,4 @@
+"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 [manager]
 show_hidden = true
 ratio = [1,4,4]
@@ -12,12 +13,12 @@ image_delay = 0
 max_width = 1300
 max_height = 1300
 image_quality = 75
-warp  = 'no'
 
 [opener]
 npp = [
 	{ run ='"C:\Program Files\Notepad++\notepad++.exe" %@', orphan = true, for = 'windows', desc = "Notepad++"}
 ]
+
 micro = [
 	{ run = '"micro" %@', block = true, for = 'windows', desc = 'Micro'}
 ]
@@ -25,9 +26,11 @@ micro = [
 7zip = [
 	{ run = "7zFM.exe %@", orphan = true, for = 'windows', desc = 'Open in 7zip'}
 ]
+
 [open]
 prepend_rules = [
 	{ mime = 'inode/directory', use = ["open","code"]},
+	{ mime = 'inode/empty', use = ["micro","npp"]},
 	{ mime = 'text/*', use = ["micro","npp"]},
 	{ mime = '*/htm*', use = ["open","reveal"]},
 	{ name = '*.{ini,lua}', use = ["micro","npp"]},
@@ -50,6 +53,7 @@ prepend_preloaders = [
 	{ mime = "{audio,video,image}/*", run = "mediainfo" },
 	{ mime = "application/subrip", run = "mediainfo" },
 ]
+
 append_previewers = [
 	{ name = "*.bin", run = "hexyl" },
 ]
