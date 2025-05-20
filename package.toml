@@ -42,3 +42,28 @@ hash = "aaf483c62652dc2b58af643095c84011"
 use = "gosxrgxx/flexoki-light"
 rev = "9d53f85"
 hash = "f9d7ea246575f8fe7232680a9b799166"
+
+[[flavor.deps]]
+use = "sanjinso/monokai-vibrant"
+rev = "8b68223"
+hash = "c09af61cef66bd2e5306f100f740cafe"
+
+[[flavor.deps]]
+use = "kmlupreti/ayu-dark"
+rev = "5f600aa"
+hash = "d5a1a9e40f43faceca48a00d7bda6be2"
+
+[[flavor.deps]]
+use = "Chromium-3-Oxide/everforest-medium"
+rev = "3d5f847"
+hash = "cddb680d1896a5d7837e67d3ab067ad1"
+
+[[flavor.deps]]
+use = "PinThePenguinOne/sunset"
+rev = "64ad82e"
+hash = "332f6fe47b831a59c59ffd837420ca00"
+
+[[flavor.deps]]
+use = "bennyyip/gruvbox-dark"
+rev = "91fdfa7"
+hash = "3e452720f6e0d21026a365e36ae00cea"
