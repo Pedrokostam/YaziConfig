@@ -1,4 +1,4 @@
-[manager] 
+[mgr] 
 prepend_keymap = [
  { on = "!", run  = 'shell "pwsh.exe -noprofile -nologo -noexit -command ""function qq{exit}"" " --block', desc = "Open PowerShell here (no profile)"},
  { on = "@", run  = 'shell "pwsh.exe -nologo " --block', desc = "Open PowerShell here"},
