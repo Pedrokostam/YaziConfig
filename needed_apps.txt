@@ -1,0 +1,9 @@
+hexyl
+ - scoop install hexyl
+ - sudo apt-get install hexyl
+ - pacman -S hexyl
+mediainfo
+ueberzug
+ - x11/wayland
+rich-preview
+ - rich-cli (python)

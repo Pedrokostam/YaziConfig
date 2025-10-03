@@ -35,27 +35,36 @@ prepend_rules = [
 	{ mime = '*/htm*', use = ["open","reveal"]},
 	{ name = '*.{ini,lua}', use = ["micro","npp"]},
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "7zip", "extract", "reveal" ] },
-	{ name = "*.{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,ms-cab*,cab*}", use = [ "7zip", "extract", "reveal" ] },
+	{ name = "*.{zip,rar,7z*,tar*,gzip,xz,zstd,bzip*,ms-cab*,cab*}", use = [ "7zip", "extract", "reveal" ] },
 ]
 append_rules = [
 ]
 
 [plugin]
 prepend_previewers= [
+	{ name = "*.csv", run = "rich-preview"}, # for csv files
+	{ name = "*.md", run = "rich-preview" }, # for markdown (.md) files
+	{ name = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
+	{ name = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
+	{ name = "*.json", run = "rich-preview"}, # for json (.json) files
 	{ name = "*.ini", run='preview'},
 	{ mime = "*.{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,ms-cab*,cab*}", run = "archive"},
 	{ mime = "{audio,video,image}/*", run = "mediainfo"},
     { mime = "application/subrip", run = "mediainfo" },
-	{ name = "*.md", run = "mdcat"},
+    { mime = "application/postscript", run = "mediainfo" },
+	{ name = "*.md", run = 'mdcat'},
 	
 ]
+append_previewers= [
+	{ name = "*", run = 'hexyl'}
+]
+
 prepend_preloaders = [  
 	{ mime = "{audio,video,image}/*", run = "mediainfo" },
 	{ mime = "application/subrip", run = "mediainfo" },
-]
-
-append_previewers = [
-	{ name = "*.bin", run = "hexyl" },
+	{ mime = "{audio,video,image}/*", run = "mediainfo"},
+    { mime = "application/subrip", run = "mediainfo" },
+    { mime = "application/postscript", run = "mediainfo" },
 ]
 
 prepend_fetchers=[

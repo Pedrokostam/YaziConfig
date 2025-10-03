@@ -1,2 +1,2 @@
-ya pack -i
-ya pack -u
+ya pkg install
+ya pkg upgrade
