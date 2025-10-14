@@ -26,12 +26,11 @@ prepend_keymap = [
  { on = "<Backspace>", run  = 'back', desc = "Back to previous directory"},
 
  
- 
- { on =  [ "g", "a" ], for="windows", run  = 'cd %APPDATA%', desc = "Go to AppData (Roaming)"},
- { on =  [ "g", "w" ], for="windows", run  = 'cd %WORK%', desc = "Go to %Work%"},
- { on =  [ "g", "p" ], for="windows", run  = 'cd %PROGRAMFILES%', desc = "Go to Program Files"},
- { on =  [ "g", "c", "y" ], for="windows", run  = 'cd %APPDATA%/yazi/config', desc = "Go to Yazi config"},
- { on =  [ "g", "c", "c" ], for="windows", run  = 'cd ~/.config', desc = "Go to config folder"},
+ { on =  [ "g", "a", "r" ], for="windows", run  = 'cd %APPDATA%', 				desc = "Go to AppData (Roaming)"},
+ { on =  [ "g", "a", "l" ], for="windows", run  = 'cd %APPDATALOCAL%', 			desc = "Go to AppData (Local)"},
+ { on =  [ "g", "p" ], 		for="windows", run  = 'cd %PROGRAMFILES%', 			desc = "Go to Program Files"},
+ { on =  [ "g", "c", "y" ], for="windows", run  = 'cd %APPDATA%/yazi/config', 	desc = "Go to Yazi config"},
+ { on =  [ "g", "c", "c" ], for="windows", run  = 'cd ~/.config', 				desc = "Go to config folder"},
  
  { on =  [ "m", "c" ], run  = 'linemode combo', desc = "Linemode: Combo"},
 ]
