@@ -29,7 +29,7 @@ prepend_keymap = [
 
  # WINDOWS
  { on =  [ "g", "a", "r" ], for="windows", run  = 'cd %APPDATA%', 				desc = "Go to AppData (Roaming)"},
- { on =  [ "g", "a", "l" ], for="windows", run  = 'cd %APPDATALOCAL%', 			desc = "Go to AppData (Local)"},
+ { on =  [ "g", "a", "l" ], for="windows", run  = 'cd %LOCALAPPDATA%', 			desc = "Go to AppData (Local)"},
  { on =  [ "g", "p" ], 		for="windows", run  = 'cd %PROGRAMFILES%', 			desc = "Go to Program Files"},
  { on =  [ "g", "c", "y" ], for="windows", run  = 'cd %APPDATA%/yazi/config', 	desc = "Go to Yazi config"},
 
