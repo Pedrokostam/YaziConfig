@@ -1,9 +1,8 @@
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+# "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 [mgr]
 show_hidden = true
 ratio = [1,4,4]
 show_symlink = true
-title_format = "{cwd}"
 linemode = "combo"
 
 [preview]
@@ -16,15 +15,15 @@ image_quality = 75
 
 [opener]
 npp = [
-	{ run ='"C:\Program Files\Notepad++\notepad++.exe" %@', orphan = true, for = 'windows', desc = "Notepad++"}
+	{ run ='"C:\Program Files\Notepad++\notepad++.exe" %s', orphan = true, for = 'windows', desc = "Notepad++"}
 ]
 
 nvim = [
-	{ run = '"nvim" %@', block = true, for = 'windows', desc = 'nvim'}
+	{ run = '"nvim" %s', block = true, for = 'windows', desc = 'nvim'}
 ]
 
 7zip = [
-	{ run = "7zFM.exe %@", orphan = true, for = 'windows', desc = 'Open in 7zip'}
+	{ run = "7zFM.exe %s", orphan = true, for = 'windows', desc = 'Open in 7zip'}
 ]
 
 [open]
@@ -33,41 +32,41 @@ prepend_rules = [
 	{ mime = 'inode/empty', use = ["nvim","npp"]},
 	{ mime = 'text/*', use = ["nvim","npp","code"]},
 	{ mime = '*/htm*', use = ["open","nvim","reveal"]},
-	{ name = '*.{ini,lua}', use = ["nvim","npp","code"]},
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "7zip", "extract", "reveal" ] },
-	{ name = "*.{zip,rar,7z*,tar*,gzip,xz,zstd,bzip*,ms-cab*,cab*}", use = [ "7zip", "extract", "reveal" ] },
+	{ url = '*.{ini,lua}', use = ["nvim","npp","code"]},
+	{ mime = "application/{zip,rar,7z,tar,gzip,xz,zstd,bzip2,lzma,cpio,arj,iso9660,vnd.ms-cab-compressed}", use = [ "7zip", "extract", "reveal" ] },
+	{ url = "*.{zip,rar,7z,tar,tgz,txz,tbz2,tzst,gz,xz,zst,bz2,cab,iso,cpio,arj,lzma}", use = [ "7zip", "extract", "reveal" ] },
+	{ url = "*.tar.*", use = [ "7zip", "extract", "reveal" ] },
 ]
 append_rules = [
 ]
 
 [plugin]
 prepend_previewers= [
-	{ name = "*.csv", run = "rich-preview"}, # for csv files
-	{ name = "*.md", run = "rich-preview" }, # for markdown (.md) files
-	{ name = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
-	{ name = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
-	{ name = "*.json", run = "rich-preview"}, # for json (.json) files
-	{ name = "*.ini", run='preview'},
-	{ mime = "*.{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,ms-cab*,cab*}", run = "archive"},
+	{ url = "*.csv", run = "rich-preview"}, # for csv files
+	{ url = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
+	{ url = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
+	{ url = "*.json", run = "rich-preview"}, # for json (.json) files
+	{ url = "*.ini", run='preview'},
+	{ mime = "application/{zip,rar,7z,tar,gzip,xz,zstd,bzip2,lzma,cpio,arj,iso9660,vnd.ms-cab-compressed}", run = "archive"},
+	{ url = "*.{zip,rar,7z,tar,tgz,txz,tbz2,tzst,gz,xz,zst,bz2,cab,iso,cpio,arj,lzma}", run = "archive"},
+	{ url = "*.tar.*", run = "archive"},
 	{ mime = "{audio,video,image}/*", run = "mediainfo"},
     { mime = "application/subrip", run = "mediainfo" },
     { mime = "application/postscript", run = "mediainfo" },
-	{ name = "*.md", run = 'mdcat'},
+	{ url = "*.md", run = 'mdcat'},
 	
 ]
 append_previewers= [
-	{ name = "*", run = 'hexyl'}
+	{ url = "*", run = 'hexyl'}
 ]
 
-prepend_preloaders = [  
+prepend_preloaders = [
 	{ mime = "{audio,video,image}/*", run = "mediainfo" },
 	{ mime = "application/subrip", run = "mediainfo" },
-	{ mime = "{audio,video,image}/*", run = "mediainfo"},
-    { mime = "application/subrip", run = "mediainfo" },
-    { mime = "application/postscript", run = "mediainfo" },
+	{ mime = "application/postscript", run = "mediainfo" },
 ]
 
 prepend_fetchers=[
-	{ id = "git", name = "*", run = "git" },
-	{ id = "git", name = "*/", run = "git" },
+	{ group = "git", url = "*", run = "git" },
+	{ group = "git", url = "*/", run = "git" },
 ]

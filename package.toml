@@ -1,69 +1,94 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "d1c8baa"
-hash = "b16b6e08085a3dfec72335415e4c83ed"
+rev = "f703392"
+hash = "f281261ff04ad7ec867c3f802a50835f"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "d1c8baa"
-hash = "e65e6528de15012b5ccdead4ed26b8bd"
+rev = "f703392"
+hash = "347cc6b190eb0c2fd60513cc7ae37412"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "2093ab7"
-hash = "e7c8ba56a83543227d2fd666b766fb86"
+rev = "f1cec0b"
+hash = "fd9312e974c63438b1f8737711462d52"
 
 [[plugin.deps]]
 use = "Reledia/hexyl"
 rev = "016a09b"
-hash = "57c25c6a44801a08fda2d4b12d855f53"
+hash = "50da29476e744dba37d77fb209328fd1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "d1c8baa"
-hash = "c3f5c63722344045822f121efe2d2553"
+rev = "f703392"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
 use = "GrzegorzKozub/mdcat"
 rev = "7b7380a"
-hash = "d009f1ad1ae46e22474f3842c3f1fcd0"
+hash = "40c20e6c1085d1f45309b9f148bf4f6e"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"
-rev = "843c3fa"
-hash = "56397401675a83833f14283d8de96abf"
+rev = "02597c4"
+hash = "33982a6e2d6df07619a2a0fc163a0950"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:diff"
+rev = "f703392"
+hash = "14558d2829c0aa05e99c57de8f74d199"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "f703392"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:visual-pivot"
+rev = "f703392"
+hash = "11e7b50ca963cc9a7779ddccd217ab7e"
 
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-dark"
-rev = "28e1977"
-hash = "e83c95d5193c0d2165e961955e521a15"
+rev = "25d28ce"
+hash = "8e6dd7e42a127173e4535993d3e0e393"
 
 [[flavor.deps]]
 use = "gosxrgxx/flexoki-light"
-rev = "45eb0a0"
-hash = "e425ec59696f38978b93dae54f54edd3"
+rev = "1b1e677"
+hash = "a80630a255909a511aba8a98d115bc15"
 
 [[flavor.deps]]
 use = "sanjinso/monokai-vibrant"
 rev = "8b68223"
-hash = "c09af61cef66bd2e5306f100f740cafe"
+hash = "7cf995e2185a45b5141ce807b7eced60"
 
 [[flavor.deps]]
 use = "kmlupreti/ayu-dark"
-rev = "648a178"
-hash = "2ebdd4e3e00d6612bfa64dd7ca3dac4f"
+rev = "7217c4c"
+hash = "cb79f39e6d0276c90c53ecc18b58953c"
 
 [[flavor.deps]]
 use = "Chromium-3-Oxide/everforest-medium"
-rev = "0158f0f"
-hash = "e6a51e72d652374ab50123c762f4bf"
+rev = "e1ead7b"
+hash = "f7dc46200e53da5e94858630184a9220"
 
 [[flavor.deps]]
 use = "PinThePenguinOne/sunset"
-rev = "64ad82e"
-hash = "332f6fe47b831a59c59ffd837420ca00"
+rev = "e86c642"
+hash = "8b8e6952ed113b9267a1e0bdb183633e"
 
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
-rev = "e5e1aef"
-hash = "79d0bda6b5ed25c572860fbcca6a9aad"
+rev = "619fdc5"
+hash = "d4c7003ec6dc4efd5d3a050d5c2f2575"
+
+[[flavor.deps]]
+use = "ZimCodes/yazi-flavors:obsidian-soft-glow"
+rev = "c64630b"
+hash = "2d6c03ed1a2133793a5a1371ab1d2573"
+
+[[flavor.deps]]
+use = "identityapproved/lain"
+rev = "e61e757"
+hash = "4ae31856f499f64e0b56bad190926e61"
