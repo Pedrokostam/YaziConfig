@@ -33,9 +33,9 @@ prepend_rules = [
 	{ mime = 'text/*', use = ["nvim","npp","code"]},
 	{ mime = '*/htm*', use = ["open","nvim","reveal"]},
 	{ url = '*.{ini,lua}', use = ["nvim","npp","code"]},
-	{ mime = "application/{zip,rar,7z,tar,gzip,xz,zstd,bzip2,lzma,cpio,arj,iso9660,vnd.ms-cab-compressed}", use = [ "7zip", "extract", "reveal" ] },
 	{ url = "*.{zip,rar,7z,tar,tgz,txz,tbz2,tzst,gz,xz,zst,bz2,cab,iso,cpio,arj,lzma}", use = [ "7zip", "extract", "reveal" ] },
 	{ url = "*.tar.*", use = [ "7zip", "extract", "reveal" ] },
+	{ mime = "application/{zip,rar,7z,tar,gzip,xz,zstd,bzip2,lzma,cpio,arj,iso9660,vnd.ms-cab-compressed}", use = [ "7zip", "extract", "reveal" ] },
 ]
 append_rules = [
 ]
@@ -47,9 +47,11 @@ prepend_previewers= [
 	{ url = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
 	{ url = "*.json", run = "rich-preview"}, # for json (.json) files
 	{ url = "*.ini", run='preview'},
-	{ mime = "application/{zip,rar,7z,tar,gzip,xz,zstd,bzip2,lzma,cpio,arj,iso9660,vnd.ms-cab-compressed}", run = "archive"},
+	{ url = "*.xml", run = "code"}, # force text preview, not hexyl
+	{ url = "*.{avproj,avlib,avcode,avhmi,avtype}", run = "code"}, # AVS files are XML, no <?xml prolog so mime=text/plain
 	{ url = "*.{zip,rar,7z,tar,tgz,txz,tbz2,tzst,gz,xz,zst,bz2,cab,iso,cpio,arj,lzma}", run = "archive"},
 	{ url = "*.tar.*", run = "archive"},
+	{ mime = "application/{zip,rar,7z,tar,gzip,xz,zstd,bzip2,lzma,cpio,arj,iso9660,vnd.ms-cab-compressed}", run = "archive"},
 	{ mime = "{audio,video,image}/*", run = "mediainfo"},
     { mime = "application/subrip", run = "mediainfo" },
     { mime = "application/postscript", run = "mediainfo" },
